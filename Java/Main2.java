@@ -1,17 +1,6 @@
 import java.util.Scanner;
-public class Main {
-  public static int calc (int i, int p, String str) {
-    int cont = 0;
-    if (p < i) {
-      if (str.charAt(p) >= 'A' && str.charAt(p) <= 'Z') {
-        cont++;
-      }
-      cont += calc(i, p+1, str);
-    }
-    return cont;
-  }
+public class Main2 {
   public static void main(String[] args) {
-
     Scanner scan = new Scanner(System.in);
     while (true) {
       // digitar
@@ -21,7 +10,11 @@ public class Main {
       if (str.equals("FIM")) {
         break;
       }
-    cont = calc(tam, 0, str);
+      for (int i = 0; i < tam; i++) {
+        if (str.charAt(i) >= 'A' && str.charAt(i) <= 'Z') {
+          cont++;
+        }
+      }
       System.out.println(cont);
     }
     scan.close();
